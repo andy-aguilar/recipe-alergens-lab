@@ -5,9 +5,9 @@ class Ingredient < ApplicationRecord
     has_many :users, through: :allergies
 
 
-    def self.order_by_allergy
-        Ingredient.order(:allergy_count)
-    end
+    # def self.order_by_allergy
+    #     self.order(allergy_count: :desc)
+    # end
 
     def allergy_count
         self.allergies.count
