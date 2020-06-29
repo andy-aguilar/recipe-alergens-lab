@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
     def index
-        @ingredients = Ingredient.sort_by_allergies
+        @ingredients = Ingredient.order('allergies_count DESC')
     end
 
     def show
