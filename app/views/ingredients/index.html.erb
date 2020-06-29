@@ -3,6 +3,6 @@
 
 <ul>
 <%@ingredients.each do |ingredient| %>
-<li> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+<li> <%= link_to ingredient.name, ingredient_path(ingredient) %> <%= "Allergic Users: #{ingredient.allergies.count}" %></li>
 <% end %>
 <ul>

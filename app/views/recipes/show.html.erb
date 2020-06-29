@@ -1,5 +1,7 @@
 <h1> <%= @recipe.name %></h1>
+<% if @recipe.user %>
 <h2>By: <%= link_to @recipe.user.name, user_path(@recipe.user)%>
+<% end  %>
 
 <h3> List of Ingredients </h3>
 <ul>
@@ -7,3 +9,6 @@
 <li> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
 <% end %>
 </ul>
+
+<%= link_to "Edit this recipe", edit_recipe_path(@recipe) %>
+<%= link_to "All Recipes", recipes_path %>

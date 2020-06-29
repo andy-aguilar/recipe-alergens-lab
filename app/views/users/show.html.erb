@@ -7,5 +7,5 @@
 <%end%>
 </ul>
 <div>
-<%= link_to "Delete User", user_path(@user.id), :method => "DELETE", data: {confirm: "Are you sure?"} %>
+<%= button_to "Delete User", user_path(@user.id), :method => :delete %>
 </div>

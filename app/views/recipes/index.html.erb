@@ -1,12 +1,20 @@
 <h1> All recipes </h1>
 
+<%= form_tag recipes_path, method: "GET" do %>
+    <%= radio_button_tag 'sort', 'true', @sort %>
+    <%= label_tag "Sort by Ingredients" %>
+    <%= radio_button_tag 'sort', 'false', @no_sort %>
+    <%= label_tag "Sort by Index" %>
+    <%= submit_tag "Sort" %>
+<% end %>
 
 <ul>
 <%@recipes.each do |recipe|  %>
-<li> <%= link_to recipe.name, recipe_path(recipe) %> </li>
+<li> <%= link_to recipe.name, recipe_path(recipe) %> <%= recipe.ingredients.count %></li>
 <% end %>
 <ul>
 
 <br>
 <br>
 <%= link_to "Create a Recipe", new_recipe_path %>
+
